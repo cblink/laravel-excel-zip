@@ -15,7 +15,7 @@ run command to create `config/excel_zip.php`
 
 ### Export
 
-use CustomCollection in your `Export`
+use CustomCollection in your `Export` and ***Don't define `collection` function***
 
 ```php
 <?php
