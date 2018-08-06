@@ -39,9 +39,23 @@ use App\Http\Controllers\Controller;
 
 class MemberController extends Controller
 {
-    public function export(ExcelZip $excelZip, MemberExport $export)
+    // chunk by database(better!)
+    public function export1(ExcelZip $excelZip, MemberExport $export)
+    {
+        $excelZip = $excelZip->setExport($export);
+    
+        Member::chunk(5000, function ($members) use ($excelZip) {
+            $excelZip->excel($members);
+        });
+    
+        return $excelZip->zip();
+    }
+    
+    // chunk in laravel-excel-zip
+    public function export2(ExcelZip $excelZip, MemberExport $export)
     {
         return $excelZip->download(Member::all(), $export);
     }
 }
 ```
+
