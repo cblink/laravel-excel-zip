@@ -1,0 +1,29 @@
+{
+    "name": "cblink/laravel-excel-zip",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hanson",
+            "email": "h@hanc.cc"
+        }
+    ],
+    "require": {
+        "chumper/zipper": "^1.0",
+        "maatwebsite/excel": "^3.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^5.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cblink\\ExcelZip\\ExcelZipServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Cblink\\ExcelZip\\": "src/"
+        }
+    }
+}
