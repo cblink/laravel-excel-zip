@@ -36,7 +36,5 @@ class RemoveZip implements ShouldQueue
         array_map('unlink', glob(storage_path("app/$this->folder")."/*"));
 
         rmdir(storage_path("app/$this->folder"));
-
-        unlink(storage_path("$this->folder.zip"));
     }
 }
