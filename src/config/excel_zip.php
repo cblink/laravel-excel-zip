@@ -11,4 +11,11 @@ return [
      * each excel data number
      */
     'chunk' => 5000,
+
+    /**
+     * Queue Driver Configuration.
+     */
+    'queue' => [
+        'connection' => null,
+    ],
 ];
