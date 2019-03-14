@@ -24,6 +24,8 @@ class RemoveZip implements ShouldQueue
     public function __construct($folder)
     {
         $this->folder = $folder;
+
+        $this->onConnection(config('excel_zip.queue.connection'));
     }
 
     /**
